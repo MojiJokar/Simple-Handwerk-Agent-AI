@@ -1,0 +1,19 @@
+Make a GitHub repo:
+git statut, init , add . , git remote add origin https://github.com/MojiJokar/Simple-Handwerk-Agent-AI.git
+
+
+Configuration:
+.env
+python -m venv .venv  
+.venv\Scripts\Activate.ps1
+
+ctl+shift+p => type python select interpreter , choose that one with .venv
+
+
+
+
+
+
+
+
+
