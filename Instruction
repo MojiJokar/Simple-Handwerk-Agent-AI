@@ -1,3 +1,20 @@
+ai_agent/
+│
+├── main.py
+├── config.py
+├── models.py
+├── agent.py
+├── crm.py
+├── email_service.py
+├── prompts.py
+├── requirements.txt
+│
+└── data/
+    └── crm.json
+
+
+
+
 Make a GitHub repo:
 git statut, init , add . , git remote add origin https://github.com/MojiJokar/Simple-Handwerk-Agent-AI.git
 
