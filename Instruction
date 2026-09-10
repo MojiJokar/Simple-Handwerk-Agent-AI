@@ -35,7 +35,8 @@ pip install -r requirements.txt
 models.py created
 ........  all necessary files created 
 
-
+Summary:
+we have done all successfully but , becasue the OpenAI is not free we will comment those parts and use Local
 
 
 

@@ -8,7 +8,7 @@ from email_service import get_new_email
 
 load_dotenv()
 
-API_KEY = os.getenv("OPENAI_API_KEY")
+#API_KEY = os.getenv("OPENAI_API_KEY")
 #API_KEY = os.getenv("NVIDIA_API_KEY")
 
 
@@ -30,7 +30,8 @@ def main():
     # 2. ساخت Agent
     # -----------------------
 
-    agent = CustomerAgent(API_KEY)
+    #agent = CustomerAgent(API_KEY)
+    agent = CustomerAgent()
 
 
     # -----------------------
