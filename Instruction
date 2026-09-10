@@ -27,7 +27,9 @@ python -m venv .venv
 ctl+shift+p => type python select interpreter , choose that one with .venv
 
 
-
+create requirements.txt
+pip freeze > requirements.txt
+pip install -r requirements.txt
 
 
 
