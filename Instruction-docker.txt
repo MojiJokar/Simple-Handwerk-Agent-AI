@@ -1,0 +1,58 @@
+Docker → Python → your application → NVIDIA → CRM
+
+Handwerk-AI-agent/
+│
+├── .venv/                  ← local Python environment
+├── .git/
+├── data/
+│   └── crm.json
+│
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── app.js
+│
+├── main.py
+├── agent.py
+├── crm.py
+├── requirements.txt
+├── .env
+├── .gitignore
+├── .dockerignore
+├── Dockerfile
+└── docker-compose.yml      ← later
+
+
+2. .venv is NOT inside Docker
+
+
+4. Create .dockerignore
+We don't want Docker copying:
+your Windows .venv
+Git files
+VS Code settings
+Python cache
+.env secrets
+into the image.
+
+
+
+Handwerk-AI-agent> pwd
+Path
+----
+C:\Users\mmb20\OneDrive\Desktop\Handwerk-AI-agent
+PS C:\Users\mmb20\OneDrive\Desktop\Handwerk-AI-agent> docker build --no-cache -t handwerk-ai .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
