@@ -1,15 +1,15 @@
 def get_new_email():
 
     return """
-    Hallo,
+    Hi there new people ,
 
-    meine Heizung funktioniert nicht.
+    meine Heizung funktioniert nicht.THis is new 
 
-    Ich wohne in Heidelberg.
+    Ich wohne in Heidelberg/Munich.
 
     Können Sie morgen kommen?
 
     Viele Grüße
 
-    Max Müller
+    Max Müller/Jadi vansee
     """

@@ -28,7 +28,7 @@ def main():
 
 
     # -----------------------
-    # 2. Create Agent
+    # 2. Create Agent(analyze email)
     # -----------------------
 
     #agent = CustomerAgent(API_KEY)
