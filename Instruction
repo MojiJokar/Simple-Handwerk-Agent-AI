@@ -82,4 +82,3 @@ output: $ main.py
     "requested_date": "tomorrow",
     "response_text": "Guten Tag Herr Müller, vielen Dank für Ihre Nachricht. Wir prüfen kurzfristig..."
 }
-
