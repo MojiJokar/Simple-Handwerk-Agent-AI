@@ -97,7 +97,9 @@ class CustomerAgent:
     def __init__(self):
         api_key = os.getenv("NVIDIA_API_KEY")
         base_url = os.getenv("NVIDIA_BASE_URL")
-
+        # Test: api are tested :
+        print(f"NVIDIA_API_KEY: {api_key}")
+        print(f"NVIDIA_BASE_URL: {base_url}")
         if not api_key:
             raise ValueError("NVIDIA_API_KEY is missing from .env")
 

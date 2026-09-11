@@ -33,7 +33,7 @@ def main():
 
     #agent = CustomerAgent(API_KEY)
     agent = CustomerAgent()
-
+    print("\nAgent created.")
 
     # -----------------------
     # 3.  Analyze email
@@ -43,6 +43,7 @@ def main():
 
     print("\nAI result:")
     print(result)
+    print("\n----test--result is printed-----------------")
 
 
     # -----------------------
@@ -53,6 +54,8 @@ def main():
 
 
     customer = result["customer"]
+    print("\nCustomer info extracted from email:")
+    print(customer)
 
     existing_customer = crm.find_customer(
         customer["email"]
