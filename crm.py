@@ -4,24 +4,42 @@ import os
 
 class CRM:
 
-    def __init__(self, filename="data/crm.json"):
+    def __init__(self):
 
-        self.filename = filename
+        self.file_path = "data/crm.json"
+        # Make sure the data folder exists
+        os.makedirs("data", exist_ok=True)
 
-        if not os.path.exists(self.filename):
-
-            with open(self.filename, "w") as file:
-                json.dump([], file)
+        # if not os.path.exists(self.filename):
+        #     os.makedirs(os.path.dirname(self.filename), exist_ok=True)  
+        #     with open(self.filename, "w") as file:
+        #         json.dump([], file)
+        
+        # Make sure the CRM file exists
+        if not os.path.exists(self.file_path):
+            with open(self.file_path, "w", encoding="utf-8") as file:
+                json.dump([], file, indent=4)
 
 ### Test to check the file created or exist:
-    import os
 
     print("Current directory:", os.getcwd())
     print("File path:", os.path.abspath("data/crm.json"))
-    def get_customers(self):
+    # def get_customers(self):
 
-        with open(self.filename, "r") as file:
-            return json.load(file)
+    #     with open(self.filename, "r") as file:
+    #         return json.load(file)
+    def get_customers(self):
+        if not os.path.exists(self.file_path):
+            return []
+
+        if os.path.getsize(self.file_path) == 0:
+            return []
+
+        try:
+            with open(self.file_path, "r", encoding="utf-8") as file:
+                return json.load(file)
+        except json.JSONDecodeError:
+            return []
 
     def find_customer(self, email):
 
@@ -35,13 +53,11 @@ class CRM:
         return None
 
     def create_customer(self, customer):
-
         customers = self.get_customers()
 
         customers.append(customer)
 
-        with open(self.filename, "w") as file:
-
+        with open(self.file_path, "w", encoding="utf-8") as file:
             json.dump(
                 customers,
                 file,

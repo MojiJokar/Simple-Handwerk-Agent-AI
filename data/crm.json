@@ -1,0 +1,10 @@
+[
+    {
+        "customer_name": "Max Müller/Jadi vansee",
+        "location": "Heidelberg/Munich",
+        "problem": "Heating not working",
+        "requested_appointment": "tomorrow",
+        "urgency": "high",
+        "category": "Heating"
+    }
+]

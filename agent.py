@@ -1,90 +1,3 @@
-# import json
-# from openai import OpenAI
-
-# from models import CustomerRequest, AgentDecision
-# from prompts import SYSTEM_PROMPT
-
-
-# class CustomerAgent:
-
-#     def __init__(self, api_key: str):
-
-#         self.client = OpenAI(
-#             api_key=api_key
-#         )
-
-#     def analyze_email(self, email_text: str):
-
-#         response = self.client.chat.completions.create(
-
-#             model="gpt-4o-mini",
-
-#             messages=[
-#                 {
-#                     "role": "system",
-#                     "content": SYSTEM_PROMPT
-#                 },
-#                 {
-#                     "role": "user",
-#                     "content": email_text
-#                 }
-#             ],
-
-#             response_format={
-#                 "type": "json_object"
-#             }
-#         )
-
-#         result = response.choices[0].message.content
-
-#         return json.loads(result)
-############UPDATED CODE############
-# from openai import OpenAI
-# import os
-# from dotenv import load_dotenv
-
-# load_dotenv()
-
-# class CustomerAgent:
-
-#     def __init__(self):
-#         self.client = OpenAI(
-#             api_key=os.getenv("NVIDIA_API_KEY"),
-#             base_url="https://integrate.api.nvidia.com/v1"
-#         )
-
-#     def analyze_email(self, email):
-
-#         response = self.client.chat.completions.create(
-#             model="meta/llama-3.1-8b-instruct",
-#             messages=[
-#                 {
-#                     "role": "system",
-#                     "content": """
-# You are an AI agent for a German Handwerk company.
-
-# Analyze incoming customer emails and extract:
-# - customer name
-# - location
-# - problem
-# - requested appointment
-# - urgency
-# - category
-
-# Return the information clearly.
-# """
-#                 },
-#                 {
-#                     "role": "user",
-#                     "content": email
-#                 }
-#             ],
-#             temperature=0.2,
-#             max_tokens=500
-#         )
-
-#         return response.choices[0].message.content
-##########simplest version =================================
 from openai import OpenAI
 import os
 from dotenv import load_dotenv
@@ -97,9 +10,11 @@ class CustomerAgent:
     def __init__(self):
         api_key = os.getenv("NVIDIA_API_KEY")
         base_url = os.getenv("NVIDIA_BASE_URL")
-        # Test: api are tested :
+
+        # Test: API values
         print(f"NVIDIA_API_KEY: {api_key}")
         print(f"NVIDIA_BASE_URL: {base_url}")
+
         if not api_key:
             raise ValueError("NVIDIA_API_KEY is missing from .env")
 
@@ -108,38 +23,78 @@ class CustomerAgent:
 
         self.client = OpenAI(
             api_key=api_key,
-            base_url=base_url
+            base_url=base_url,
+            timeout=120  # Set a timeout of 120 seconds
         )
 
+    # !!! AFTER TESTING NVIDIA, DUE TO likely the larger prompt/request
+    # configuration, WE MAKE A SIMPLER VERSION
+
     def analyze_email(self, email):
+        print("Sending request to NVIDIA...")
 
         response = self.client.chat.completions.create(
             model="openai/gpt-oss-20b",
             messages=[
                 {
-                    "role": "system",
-                    "content": """
-You are an AI agent for a German Handwerk company.
-
-Analyze incoming customer emails and extract:
-
-- customer name
-- location
-- problem
-- requested appointment
-- urgency
-- category
-
-Return the information clearly.
-"""
-                },
-                {
                     "role": "user",
-                    "content": email
+                    "content": f"""
+Extract information from this customer email.
+
+Email:
+
+{email}
+
+Return ONLY valid JSON,
+Do not explain anything.
+Do not show  your reasoning.
+Use exactly this structure:
+
+{{
+    "customer_name": "",
+    "location": "",
+    "problem": "",
+    "requested_appointment": "",
+    "urgency": "",
+    "category": ""
+}}
+"""
                 }
             ],
-            temperature=0.2,
-            max_tokens=500
+            temperature=0,
+            max_tokens=1000,
+            extra_body={
+                "chat_template_kwargs": {
+                    "enable_thinking": False
+                }
+            }
         )
 
-        return response.choices[0].message.content
+        # print("Response received from NVIDIA!")
+
+        # message = response.choices[0].message
+
+        # print("\nMESSAGE OBJECT:")
+        # print(message)
+
+        # print("\nCONTENT:")
+        # print(repr(message.content))
+
+        # print("\nREASONING:")
+        # print(repr(message.reasoning))
+
+        # print("\nREASONING CONTENT:")
+        # print(repr(message.reasoning_content))
+
+        # return message.content
+        
+        print("FINISH REASON:")
+        print(response.choices[0].finish_reason)
+        
+        
+        result = response.choices[0].message.content
+
+        print("AI RESULT:")
+        print(result)
+
+        return result
