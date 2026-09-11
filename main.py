@@ -14,7 +14,7 @@ load_dotenv()
 
 def main():
 
-    print("AI Agent started...")
+    print("\nAI Agent started...")
 
     # -----------------------
     # 1. receive email
@@ -22,9 +22,9 @@ def main():
 
     email = get_new_email()
 
-    print("\nIncoming email:")
+    print("Incoming email:")
     print(email)
-    print("\n----test--email is printed-----------------")
+    print("----test--email is printed-----------------")
 
 
     # -----------------------
@@ -38,10 +38,10 @@ def main():
     # -----------------------
     # 3.  Analyze email
     # -----------------------
-
+    print("Analyzing email...")
     result = agent.analyze_email(email)
 
-    print("\nAI result:")
+    print("AI result:")
     print(result)
     print("\n----test--result is printed-----------------")
 
@@ -49,7 +49,7 @@ def main():
     # -----------------------
     # 4.  Connect to  CRM
     # -----------------------
-
+    print("\nConnecting to CRM...")
     crm = CRM()
 
 
@@ -65,7 +65,7 @@ def main():
     # -----------------------
     # 5. Decision
     # -----------------------
-
+    print("\nChecking if customer exists in CRM...")
     if existing_customer:
 
         print("\nExisting customer found.")
