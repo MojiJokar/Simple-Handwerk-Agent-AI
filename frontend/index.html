@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Handwerk AI Agent</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">🔧</div>
+
+                <div>
+                    <h2>Handwerk AI</h2>
+                    <span>AI Agent</span>
+                </div>
+            </div>
+
+            <nav>
+
+                <button class="nav-item active">
+                    <span>📊</span>
+                    Dashboard
+                </button>
+
+                <button class="nav-item">
+                    <span>📧</span>
+                    Emails
+                </button>
+
+                <button class="nav-item">
+                    <span>👥</span>
+                    Customers
+                </button>
+
+                <button class="nav-item">
+                    <span>📅</span>
+                    Calendar
+                </button>
+
+                <button class="nav-item">
+                    <span>⚙️</span>
+                    Settings
+                </button>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="ai-status">
+                    <div class="status-dot"></div>
+
+                    <div>
+                        <strong>AI Agent Online</strong>
+                        <small>NVIDIA NIM</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <!-- HEADER -->
+
+            <header class="header">
+
+                <div>
+                    <h1>Dashboard</h1>
+
+                    <p>
+                        Manage customer requests with your AI agent.
+                    </p>
+                </div>
+
+                <div class="header-actions">
+
+                    <button class="notification">
+                        🔔
+                        <span>3</span>
+                    </button>
+
+                    <div class="user">
+                        <div class="avatar">MJ</div>
+
+                        <div>
+                            <strong>Admin</strong>
+                            <small>Handwerk Company</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- STATISTICS -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        📧
+                    </div>
+
+                    <div>
+                        <span>New Emails</span>
+                        <strong>12</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon red">
+                        🔥
+                    </div>
+
+                    <div>
+                        <span>High Urgency</span>
+                        <strong>3</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        👥
+                    </div>
+
+                    <div>
+                        <span>Customers</span>
+                        <strong>48</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon orange">
+                        📅
+                    </div>
+
+                    <div>
+                        <span>Appointments</span>
+                        <strong>8</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTENT GRID -->
+
+            <section class="content-grid">
+
+
+                <!-- CUSTOMER REQUEST -->
+
+                <div class="card request-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>Latest Customer Request</h2>
+
+                            <p>
+                                AI analyzed this incoming email.
+                            </p>
+                        </div>
+
+                        <span class="badge high">
+                            HIGH URGENCY
+                        </span>
+
+                    </div>
+
+
+                    <div class="customer">
+
+                        <div class="customer-avatar">
+                            MM
+                        </div>
+
+                        <div>
+
+                            <h3>Max Müller / Jadi vansee</h3>
+
+                            <span>
+                                📧 New customer request
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="request-details">
+
+                        <div class="detail">
+
+                            <label>Location</label>
+
+                            <strong>
+                                📍 Heidelberg / Munich
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <label>Category</label>
+
+                            <strong>
+                                🔥 Heating
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <label>Problem</label>
+
+                            <strong>
+                                Heizung funktioniert nicht
+                            </strong>
+
+                        </div>
+
+
+                        <div class="detail">
+
+                            <label>Requested Appointment</label>
+
+                            <strong>
+                                📅 Tomorrow
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="email-box">
+
+                        <div class="email-title">
+                            📧 Original Email
+                        </div>
+
+                        <p>
+                            Hi there new people,
+                            <br><br>
+
+                            meine Heizung funktioniert nicht.
+                            <br><br>
+
+                            Ich wohne in Heidelberg/Munich.
+                            <br><br>
+
+                            Können Sie morgen kommen?
+                            <br><br>
+
+                            Viele Grüße
+                            <br>
+
+                            Max Müller / Jadi vansee
+                        </p>
+
+                    </div>
+
+
+                    <div class="actions">
+
+                        <button class="button secondary">
+                            View Email
+                        </button>
+
+                        <button
+                            class="button primary"
+                            onclick="generateResponse()"
+                        >
+                            ✨ Generate Response
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- AI PANEL -->
+
+                <div class="card ai-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h2>AI Analysis</h2>
+
+                            <p>
+                                NVIDIA AI Agent
+                            </p>
+                        </div>
+
+                        <span class="ai-online">
+                            ● Online
+                        </span>
+
+                    </div>
+
+
+                    <div class="analysis">
+
+                        <div class="analysis-item">
+
+                            <span>Customer</span>
+
+                            <strong>
+                                Max Müller / Jadi vansee
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-item">
+
+                            <span>Problem</span>
+
+                            <strong>
+                                Heating not working
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-item">
+
+                            <span>Urgency</span>
+
+                            <strong class="urgent">
+                                HIGH
+                            </strong>
+
+                        </div>
+
+
+                        <div class="analysis-item">
+
+                            <span>Category</span>
+
+                            <strong>
+                                Heating
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ai-message">
+
+                        <div class="ai-message-header">
+                            🤖 AI Recommendation
+                        </div>
+
+                        <p>
+                            The customer reports a heating failure
+                            and requests an appointment tomorrow.
+                            Because this is a heating problem during
+                            cold weather, the request should be
+                            treated as high priority.
+                        </p>
+
+                    </div>
+
+
+                    <div class="confidence">
+
+                        <div class="confidence-header">
+
+                            <span>AI Confidence</span>
+
+                            <strong>94%</strong>
+
+                        </div>
+
+                        <div class="progress">
+
+                            <div class="progress-bar"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESPONSE SECTION -->
+
+            <section class="card response-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h2>Suggested Response</h2>
+
+                        <p>
+                            Review the AI-generated response before sending.
+                        </p>
+
+                    </div>
+
+                    <span class="badge pending">
+                        HUMAN APPROVAL REQUIRED
+                    </span>
+
+                </div>
+
+
+                <textarea
+                    id="responseText"
+                    placeholder="AI-generated response will appear here..."
+                ></textarea>
+
+
+                <div class="response-actions">
+
+                    <button
+                        class="button secondary"
+                        onclick="editResponse()"
+                    >
+                        ✏️ Edit
+                    </button>
+
+                    <button
+                        class="button primary"
+                        onclick="approveResponse()"
+                    >
+                        ✓ Approve & Send
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
