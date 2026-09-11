@@ -1,15 +1,15 @@
 def get_new_email():
 
     return """
-    Hi there new people ,
+    Hi  ,
 
-    meine Heizung funktioniert nicht.THis is new 
+    my air conditioner is broken. I need a repair service. 
 
-    Ich wohne in Heidelberg/Munich.
+    I live in Darmstadt.
 
-    Können Sie morgen kommen?
+    can you come on Sunday ?
 
-    Viele Grüße
+    Thanks
 
-    Max Müller/Jadi vansee
+    Andrew Berliner
     """

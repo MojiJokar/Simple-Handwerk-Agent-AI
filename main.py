@@ -12,17 +12,16 @@ load_dotenv()
 
 def main():
 
-    print("\nAI Agent started...")
-
+    
     # -----------------------
     # 1. receive email
     # -----------------------
 
     email = get_new_email()
 
-    print("Incoming email:")
-    print(email)
-    print("----Customer email is printed: -------------------------------------")
+    #print("Incoming NEW  email:--------------------------------------------------")
+    #print(email)
+    #print("---- -------------------------------------")
 
 
     # -----------------------
@@ -30,7 +29,7 @@ def main():
     # -----------------------
 
     agent = CustomerAgent()
-    print("\nAgent created.")
+    print("\nnew Agent created.---------------------------------------------------")
 
     # -----------------------
     # 3.  Analyze email
@@ -59,12 +58,17 @@ def main():
     # -----------------------
     # 4.  Connect to  CRM
     # -----------------------
-    print("\nConnecting to CRM...")
+    print("\nConnecting to CRM...==>>>>>>>>>>>>>>>>>>>")
 
     crm = CRM()
 
     customer = result
-
+    
+    # print("\nsender's email: ")
+    # print(customer["customer_email"])
+    print("\nsender's Name: ")
+    print(customer["customer_name"])
+    
     print("\nCustomer info extracted from email:")
     print(customer)
 
@@ -90,9 +94,33 @@ def main():
     # -----------------------
     # 5. Decision
     # -----------------------
+    # print("\nChecking if customer exists in CRM...")
+    # crm.create_customer(customer)
+    
     print("\nChecking if customer exists in CRM...")
 
-    crm.create_customer(customer)
+    existing_customer = crm.find_customer(customer["customer_name"])
+
+    if existing_customer:
+        print("\nCustomer already exists in CRM.")
+        print("Updating customer...")
+
+        crm.update_customer(
+            customer["customer_name"],
+            customer
+        )
+
+        print("Customer updated successfully.")
+
+    else:
+        print("\nCustomer does not exist in CRM.")
+        print("Creating new customer...")
+
+        crm.create_customer(customer)
+
+        print("Customer created successfully.")
+    
+    
     # -----------------------
     # 6. Answer
     # -----------------------

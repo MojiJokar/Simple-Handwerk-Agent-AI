@@ -34,15 +34,15 @@ class CRM:
         except json.JSONDecodeError:
             return []
 
-    def find_customer(self, email):
+    def find_customer(self, customer_name):
 
         customers = self.get_customers()
 
         for customer in customers:
 
-            if customer["email"] == email:
+            if customer["customer_name"].lower() == customer_name.lower() and customer["email"].lower():
                 return customer
-
+                print("customer found")
         return None
 
     def create_customer(self, customer):
@@ -59,3 +59,22 @@ class CRM:
             )
 
         return customer
+    
+    def update_customer(self, customer_name, updated_customer):
+        customers = self.get_customers()
+
+        for i, customer in enumerate(customers):
+            if customer["customer_name"].lower() == customer_name.lower():
+                customers[i] = updated_customer
+
+                with open(self.file_path, "w", encoding="utf-8") as file:
+                    json.dump(
+                        customers,
+                        file,
+                        indent=4,
+                        ensure_ascii=False
+                    )
+
+                return updated_customer
+
+        return None

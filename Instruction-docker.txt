@@ -43,12 +43,19 @@ Path
 C:\Users\mmb20\OneDrive\Desktop\Handwerk-AI-agent
 PS C:\Users\mmb20\OneDrive\Desktop\Handwerk-AI-agent> docker build --no-cache -t handwerk-ai .
 
+7.checking docker image:  $docker images
+8. run your contaier: $docker run --env-file .env handwerk-ai
 
+***
+Dockerfile
+    ↓
+"How do I build my Handwerk AI application?"
 
-
-
-
-
+docker-compose.yml
+    ↓
+"How do I run my whole system?"
+$docker compose up
+$ 
 
 
 

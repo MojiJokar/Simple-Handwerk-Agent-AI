@@ -16,19 +16,11 @@
         "category": "Heating"
     },
     {
-        "customer_name": "Max Müller/Jadi vansee",
-        "location": "Heidelberg/Munich",
-        "problem": "Heizung funktioniert nicht",
-        "requested_appointment": "tomorrow",
-        "urgency": "high",
-        "category": "Heating"
-    },
-    {
-        "customer_name": "Max Müller/Jadi vansee",
-        "location": "Heidelberg/Munich",
-        "problem": "Heizung funktioniert nicht",
-        "requested_appointment": "tomorrow",
-        "urgency": "high",
-        "category": "heating"
+        "customer_name": "Andrew Berliner",
+        "location": "Darmstadt",
+        "problem": "air conditioner broken",
+        "requested_appointment": "Sunday",
+        "urgency": "normal",
+        "category": "HVAC"
     }
 ]
