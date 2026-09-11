@@ -11,5 +11,5 @@ def get_new_email():
 
     Thanks
 
-    Nina Kanves
+    Thomas Alexandervich
     """
