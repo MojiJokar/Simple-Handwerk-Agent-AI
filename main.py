@@ -17,17 +17,18 @@ def main():
     print("AI Agent started...")
 
     # -----------------------
-    # 1. دریافت ایمیل
+    # 1. receive email
     # -----------------------
 
     email = get_new_email()
 
     print("\nIncoming email:")
     print(email)
+    print("\n----test--email is printed-----------------")
 
 
     # -----------------------
-    # 2. ساخت Agent
+    # 2. Create Agent
     # -----------------------
 
     #agent = CustomerAgent(API_KEY)
@@ -35,7 +36,7 @@ def main():
 
 
     # -----------------------
-    # 3. تحلیل ایمیل
+    # 3.  Analyze email
     # -----------------------
 
     result = agent.analyze_email(email)
@@ -45,7 +46,7 @@ def main():
 
 
     # -----------------------
-    # 4. اتصال به CRM
+    # 4.  Connect to  CRM
     # -----------------------
 
     crm = CRM()
@@ -59,7 +60,7 @@ def main():
 
 
     # -----------------------
-    # 5. تصمیم
+    # 5. Decision
     # -----------------------
 
     if existing_customer:
@@ -74,7 +75,7 @@ def main():
 
 
     # -----------------------
-    # 6. پاسخ
+    # 6. Answer
     # -----------------------
 
     print("\nSuggested response:")
