@@ -34,16 +34,27 @@ class CRM:
         except json.JSONDecodeError:
             return []
 
-    def find_customer(self, customer_name):
+    # def find_customer(self, customer_name):
 
-        customers = self.get_customers()
+    #     customers = self.get_customers()
 
-        for customer in customers:
+    #     for customer in customers:
 
-            if customer["customer_name"].lower() == customer_name.lower() and customer["email"].lower():
-                return customer
-                print("customer found")
-        return None
+    #         if customer["customer_name"].lower() == customer_name.lower() and customer["email"].lower():
+    #             return customer
+    #             print("customer found")
+    #     return None
+
+    def find_customer(self, location):
+
+            customers = self.get_customers()
+
+            for customer in customers:
+
+                if customer["location"].lower() == location.lower():
+                    return customer
+                    print("customer found")
+            return None
 
     def create_customer(self, customer):
         customers = self.get_customers()

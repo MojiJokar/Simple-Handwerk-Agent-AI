@@ -22,5 +22,21 @@
         "requested_appointment": "Sunday",
         "urgency": "normal",
         "category": "HVAC"
+    },
+    {
+        "customer_name": "Andrew Berliner",
+        "location": "Darmstadt, Germany, Hidelberg, 58987",
+        "problem": "air conditioner is broken",
+        "requested_appointment": "Sunday",
+        "urgency": "normal",
+        "category": "air conditioner repair"
+    },
+    {
+        "customer_name": "Nina Kanves",
+        "location": "Darmstadt, Germany,Frankfurter, 0000",
+        "problem": "air conditioner is broken",
+        "requested_appointment": "Sunday",
+        "urgency": "high",
+        "category": "repair"
     }
 ]

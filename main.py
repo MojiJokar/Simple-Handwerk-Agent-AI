@@ -12,30 +12,16 @@ load_dotenv()
 
 def main():
 
-    
-    # -----------------------
     # 1. receive email
-    # -----------------------
 
     email = get_new_email()
 
-    #print("Incoming NEW  email:--------------------------------------------------")
-    #print(email)
-    #print("---- -------------------------------------")
-
-
-    # -----------------------
     # 2. Create Agent(analyze email)
-    # -----------------------
-
     agent = CustomerAgent()
-    print("\nnew Agent created.---------------------------------------------------")
+    print("\nnew Agent created : ---------------------------------------------------")
 
-    # -----------------------
     # 3.  Analyze email
-    # -----------------------
     print("Analyzing email...")
-
 
     result = agent.analyze_email(email)
 
@@ -66,8 +52,8 @@ def main():
     
     # print("\nsender's email: ")
     # print(customer["customer_email"])
-    print("\nsender's Name: ")
-    print(customer["customer_name"])
+    # print("\nsender's Name: ")
+    # print(customer["customer_name"])
     
     print("\nCustomer info extracted from email:")
     print(customer)
@@ -99,14 +85,15 @@ def main():
     
     print("\nChecking if customer exists in CRM...")
 
-    existing_customer = crm.find_customer(customer["customer_name"])
+    #existing_customer = crm.find_customer(customer["customer_name"])
+    existing_customer = crm.find_customer(customer["location"])
 
     if existing_customer:
         print("\nCustomer already exists in CRM.")
         print("Updating customer...")
 
         crm.update_customer(
-            customer["customer_name"],
+            customer["location"],
             customer
         )
 

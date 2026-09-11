@@ -5,11 +5,11 @@ def get_new_email():
 
     my air conditioner is broken. I need a repair service. 
 
-    I live in Darmstadt.
+    I live in Darmstadt, Germany,Frankfurter, 0000.
 
     can you come on Sunday ?
 
     Thanks
 
-    Andrew Berliner
+    Nina Kanves
     """
