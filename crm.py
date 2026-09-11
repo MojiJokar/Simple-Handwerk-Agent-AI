@@ -10,10 +10,6 @@ class CRM:
         # Make sure the data folder exists
         os.makedirs("data", exist_ok=True)
 
-        # if not os.path.exists(self.filename):
-        #     os.makedirs(os.path.dirname(self.filename), exist_ok=True)  
-        #     with open(self.filename, "w") as file:
-        #         json.dump([], file)
         
         # Make sure the CRM file exists
         if not os.path.exists(self.file_path):
@@ -24,10 +20,7 @@ class CRM:
 
     print("Current directory:", os.getcwd())
     print("File path:", os.path.abspath("data/crm.json"))
-    # def get_customers(self):
 
-    #     with open(self.filename, "r") as file:
-    #         return json.load(file)
     def get_customers(self):
         if not os.path.exists(self.file_path):
             return []

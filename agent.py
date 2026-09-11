@@ -12,8 +12,8 @@ class CustomerAgent:
         base_url = os.getenv("NVIDIA_BASE_URL")
 
         # Test: API values
-        print(f"NVIDIA_API_KEY: {api_key}")
-        print(f"NVIDIA_BASE_URL: {base_url}")
+        # print(f"NVIDIA_API_KEY: {api_key}")
+        # print(f"NVIDIA_BASE_URL: {base_url}")
 
         if not api_key:
             raise ValueError("NVIDIA_API_KEY is missing from .env")
@@ -70,23 +70,6 @@ Use exactly this structure:
             }
         )
 
-        # print("Response received from NVIDIA!")
-
-        # message = response.choices[0].message
-
-        # print("\nMESSAGE OBJECT:")
-        # print(message)
-
-        # print("\nCONTENT:")
-        # print(repr(message.content))
-
-        # print("\nREASONING:")
-        # print(repr(message.reasoning))
-
-        # print("\nREASONING CONTENT:")
-        # print(repr(message.reasoning_content))
-
-        # return message.content
         
         print("FINISH REASON:")
         print(response.choices[0].finish_reason)
