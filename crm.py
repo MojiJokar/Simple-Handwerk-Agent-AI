@@ -13,6 +13,11 @@ class CRM:
             with open(self.filename, "w") as file:
                 json.dump([], file)
 
+### Test to check the file created or exist:
+    import os
+
+    print("Current directory:", os.getcwd())
+    print("File path:", os.path.abspath("data/crm.json"))
     def get_customers(self):
 
         with open(self.filename, "r") as file:
